@@ -1,18 +1,22 @@
 package ca.uwaterloo.cs446;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 
-public interface Subject(){
+public abstract class Subject{
     ArrayList<Observer> observers;
+
+    Subject(){
+        this.observers = new ArrayList<Observer>();
+    }
 
     void attach(Observer ob){
         observers.add(ob);
     }
     void sendNotice(){
         for (Observer ob : observers){
-            ob.sendNotice();
+            ob.update();
         }
     }
-    void getState();
-    void setState(int state);
+    abstract int getState();
+    abstract void setState(int state);
 }

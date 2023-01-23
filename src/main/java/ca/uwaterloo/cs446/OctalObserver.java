@@ -2,20 +2,20 @@ package ca.uwaterloo.cs446;
 
 import java.lang.String;
 
-public class OctalObserver{
+public class OctalObserver implements Observer{
     String octValue;
     Subject sub;
     
-    void OctalObserver(Subject sub){
+    OctalObserver(Subject sub){
         this.sub = sub;
-        sub.attach(this);
+        this.sub.attach(this);
     }
 
-    void update(){
-        octValue = Integer.toOctalString(sub.getState);
+    public void update(){
+        octValue = Integer.toOctalString(sub.getState());
     }
 
-    String getValue(){
+    public String getValue(){
         return octValue;
     }
 }

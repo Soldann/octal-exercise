@@ -1,9 +1,11 @@
 package ca.uwaterloo.cs446;
 
-public class NumberSubject implements Subject {
+import java.util.ArrayList;
+
+public class NumberSubject extends Subject {
     int state;
 
-    void NumberSubject(int state){
+    NumberSubject(int state){
         this.state = state;
     }
 
